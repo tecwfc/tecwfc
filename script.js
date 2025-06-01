@@ -56,7 +56,8 @@ function gerarCalendario() {
 
   if (!escala[chaveMes]) escala[chaveMes] = {};
 
-  const diasDaSemana = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
+  // Alterado: agora usa apenas a primeira letra do nome do dia
+  const diasDaSemana = ["D", "S", "T", "Q", "Q", "S", "S"];
   let tabela = `<table class="tabela"><thead><tr><th>Funcionário</th>`;
 
   // Cabeçalho dos dias
