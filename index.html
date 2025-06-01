@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escala de Plantão Mensal</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+
+<body>
+
+  </div>
+  <div class="cabecalho">
+  <h1>Escala de Plantão Mensal</h1>
+  <img src="assets/img_supervila.jpg" alt="Logo SuperVila" class="logo-supervila">
+ 
+  </div>
+
+  <div class="adicionar-funcionario">
+    <input type="text" id="novoFuncionario" placeholder="Nome do funcionário" />
+    <button id="btnAdicionarFuncionario">
+      <i class="fas fa-user-plus"></i> Adicionar Funcionário
+
+
+    </button>
+    <!-- </div> -->
+
+    <!-- <div class="controls"> -->
+    <label for="mes">Selecione o mês:</label>
+    <input type="month" id="mes" />
+
+    <button id="btnGerar">
+      <i class="fas fa-calendar-alt"></i> Gerar Escala
+    </button>
+
+    <button id="btnReset" class="danger">
+      <i class="fas fa-trash-alt"></i> Resetar Escala
+    </button>
+
+    <button id="btnImprimir">
+      <i class="fas fa-print"></i> Imprimir
+    </button>
+  </div>
+
+
+  <div class="tabela-container">
+    <div id="calendario"></div>
+  </div>
+
+  <div id="toast-container"></div>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
