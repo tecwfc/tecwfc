@@ -91,7 +91,7 @@ function gerarLinhaFuncionario(funcionario, diasNoMes, chaveMes, index) {
     <div class="funcionario-cell" style="display:flex; align-items:center; gap:8px;">
       <button class="btn-ferias" ondblclick="marcarFeriasParaFuncionario(${index})"
         style="font-size:0.75em; padding: 2px 6px; background:#4CAF50; color:#fff; border:none; border-radius:3px; cursor:pointer;">
-        Férias
+        F
       </button>
       <span>${nomeComFolgas}</span>
       <button class="btn-deletar" onclick="removerFuncionario(${index})"
@@ -202,7 +202,9 @@ function adicionarFuncionario() {
   funcionarios.push(nome);
   salvarDados();
   gerarCalendario();
-  inputNovoFuncionario.value = '';
+   inputNovoFuncionario.value = '';
+
+   inputNovoFuncionario.focus();
   mostrarToast("Funcionário adicionado!", "success");
 }
 
@@ -268,3 +270,4 @@ window.onload = () => {
   inputMes.value = `${ano}-${mes}`;
   gerarCalendario();
 };
+
