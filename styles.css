@@ -1,0 +1,588 @@
+/* Importa a fonte Poppins do Google Fonts para uso no site */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Variáveis CSS para cores e sombras para fácil manutenção */
+:root {
+  --cor-primaria: #009688;
+  /* Verde água principal */
+  --cor-secundaria: #00796b;
+  /* Verde mais escuro para botões */
+  --cor-secundaria-hover: #004d40;
+  /* Verde escuro para hover */
+  --cor-perigo: #e53935;
+  /* Vermelho para alertas */
+  --cor-perigo-hover: #b71c1c;
+  /* Vermelho escuro para hover perigo */
+  --cor-domingo: #b71c1c;
+  /* Vermelho para domingos */
+  --cor-sabado: #1565c0;
+  /* Azul para sábados */
+  --cor-fundo: #f9f9f9;
+  /* Fundo claro */
+  --sombra: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* Sombra leve */
+}
+
+/* Estilo geral do corpo da página */
+body {
+  font-family: 'Poppins', sans-serif;
+  /* Fonte Poppins para o site */
+  background-color: var(--cor-fundo);
+  /* Cor de fundo clara */
+  margin: 20px;
+  /* Margem ao redor da página */
+  color: #333;
+  /* Cor do texto principal */
+  zoom: 0.80;
+  /* Zoom reduzido para o layout */
+  
+}
+
+
+/* Estilo do título principal */
+h1 {
+  text-align: center;
+  /* Centraliza o texto */
+  color:#000000;
+  /* Cor verde escura */
+  margin-bottom: 25px;
+  /* Espaço abaixo do título */
+  /* font-weight: 600; */
+  /* Peso da fonte semi-negrito */
+  font-size: 70px;
+}
+
+h2 {
+  text-align: center;
+  /* Centraliza o texto */
+  color: var(--cor-secundaria);
+  /* Cor verde escura */
+  margin-bottom: 25px;
+  /* Espaço abaixo do título */
+  font-weight: 600;
+  /* Peso da fonte semi-negrito */
+}
+
+.cabecalho .logo-supervila {
+  width: 5rem; /* 80px */
+  height: auto;
+}
+
+.cabecalho h1 {
+  font-size: 1.75rem; /* 28px */
+  margin: 0;
+}
+
+.cabecalho {
+  display: flex;
+  justify-content: center; /* Centraliza na horizontal */
+  align-items: center;      /* Alinha na vertical (se quiser) */
+  gap: 20px;                /* Espaço entre o h1 e h2 */
+  margin: 20px 0;           /* Espaço externo opcional */
+}
+/* Estilização dos inputs tipo month e do campo para novo funcionário */
+input[type="month"],
+input#novoFuncionario {
+  padding: 8px 14px;
+  /* Espaçamento interno */
+  border: 1px solid #ccc;
+  /* Borda cinza clara */
+  border-radius: 8px;
+  /* Cantos arredondados */
+  box-shadow: var(--sombra);
+  /* Sombra leve */
+  transition: border-color 0.3s;
+  /* Transição suave na borda */
+  width: 300px;
+  /* Largura da caixa de texto */
+  font-size: 16px;
+  /* Tamanho da fonte (opcional) */
+}
+
+/* Efeito ao focar nos inputs */
+input[type="month"]:focus,
+input#novoFuncionario:focus {
+  border-color: var(--cor-primaria);
+  /* Borda verde água */
+  outline: none;
+  /* Remove contorno padrão */
+}
+
+
+/* Estilo para o contêiner de adicionar funcionário */
+.adicionar-funcionario {
+  text-align: left;
+  /* Alinha conteúdo à esquerda */
+  display: flex;
+  /* Usa flexbox para alinhar itens lado a lado */
+  align-items: center;
+  /* Alinha verticalmente */
+  gap: 10px;
+  /* Espaço entre input e botão */
+  margin-bottom: 20px;
+  /* Espaço abaixo */
+
+}
+
+.adicionar-funcionario button {
+  padding: 10px 20px;
+  /* Aumenta o espaçamento interno */
+  font-size: 16px;
+  /* Aumenta o tamanho da fonte */
+  border-radius: 8px;
+  /* Mantém os cantos arredondados */
+  background-color: var(--cor-secundaria);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--sombra);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#btnGerar {
+  margin-bottom: 20px;
+}
+
+/* Estilo geral dos botões */
+button {
+  padding: 8px 16px;
+  /* Espaçamento interno */
+  border: none;
+  /* Remove borda padrão */
+  background-color: var(--cor-secundaria);
+  /* Fundo verde escuro */
+  color: white;
+  /* Texto branco */
+  border-radius: 8px;
+  /* Cantos arredondados */
+  cursor: pointer;
+  /* Cursor em forma de mão */
+  margin-left: 5px;
+  /* Espaço à esquerda */
+  box-shadow: var(--sombra);
+  /* Sombra leve */
+  transition: background-color 0.3s, transform 0.2s;
+  /* Transições suaves */
+}
+
+/* Efeito hover para botões */
+button:hover {
+  background-color: var(--cor-secundaria-hover);
+  /* Verde escuro */
+  transform: translateY(-1px);
+  /* Leve elevação */
+}
+
+/* Botões que indicam perigo, como remover */
+button.danger {
+  background-color: var(--cor-perigo);
+  /* Fundo vermelho */
+}
+
+/* Hover para botões de perigo */
+button.danger:hover {
+  background-color: var(--cor-perigo-hover);
+  /* Vermelho escuro */
+}
+
+/* Contêiner da tabela com rolagem e borda arredondada */
+.tabela-container {
+  max-height: 700px;
+  /* Altura máxima para scroll */
+  overflow: auto;
+  /* Scroll automático */
+  border: 1px solid #ccc;
+  /* Borda cinza */
+  border-radius: 8px;
+  /* Cantos arredondados */
+  box-shadow: var(--sombra);
+  /* Sombra leve */
+  background-color: white;
+  /* Fundo branco */
+}
+
+
+/* Estilo básico da tabela */
+.tabela {
+  border-collapse: collapse;
+  /* Remove espaços entre células */
+  width: 100%;
+  /* Largura total do container */
+  font-size: 16px;
+  /* Tamanho da fonte pequeno */
+}
+
+/* Estilo de células th e td da tabela */
+.tabela th,
+.tabela td {
+  border: 1px solid #ccc;
+  /* Borda cinza clara */
+  padding: 2px;
+  /* Espaçamento interno pequeno */
+  text-align: center;
+  /* Centraliza texto */
+  word-break: break-word;
+  /* Quebra palavras longas */
+}
+
+/* Células gerais da tabela */
+th,
+td {
+  border: 1px solid #ddd;
+  /* Borda cinza clara */
+  padding: 10px 12px;
+  /* Espaçamento confortável */
+  text-align: center;
+  /* Texto centralizado */
+  background-color: white;
+  /* Fundo branco */
+}
+
+/* Cabeçalho fixo ao rolar verticalmente */
+.tabela th {
+  position: sticky;
+  /* Fixa posição */
+  top: 0;
+  /* Fica no topo */
+  background-color: var(--cor-primaria);
+  /* Fundo verde água */
+  color: rgb(12, 12, 12);
+  /* Texto branco */
+  z-index: 2;
+  /* Sobreposição */
+}
+
+/* Primeira coluna fixa ao rolar horizontalmente */
+.tabela th:first-child,
+.tabela td:first-child {
+  position: sticky;
+  /* Fixa posição */
+  left: 0;
+  /* No lado esquerdo */
+  background-color: #eeeeee;
+  /* Fundo cinza claro */
+  color: #030303;
+  /* Texto escuro */
+  z-index: 3;
+  /* Sobreposição maior */
+  font-weight: 600;
+  /* Negrito médio */
+}
+
+/* Estilo específico para domingos */
+th.domingo,
+td.domingo {
+  background-color: #ffe5e5;
+  /* Fundo vermelho claro */
+  color: var(--cor-domingo);
+  /* Texto vermelho */
+}
+
+/* Estilo específico para sábados */
+th.sabado,
+td.sabado {
+  background-color: #e0f0ff;
+  /* Fundo azul claro */
+  color: var(--cor-sabado);
+  /* Texto azul */
+}
+
+/* Estilo para status Plantão (t) */
+td.t {
+  background-color: white(255, 255, 255);
+  /* Verde claro */
+  color: #000000;
+  /* Verde escuro */
+  font-weight: 600;
+  /* Negrito médio */
+}
+
+/* Estilo para status Folga (fol) */
+td.fol {
+  background-color: #ff0606;
+  /* Amarelo claro */
+  color: #080808;
+  /* Amarelo escuro */
+  font-weight: 600;
+  /* Negrito médio */
+}
+
+/* Estilo para status Férias (fer) */
+td.fer {
+  background-color: #fff56a;
+  /* Rosa claro */
+  color: #0f0f0f;
+  /* Rosa escuro */
+  font-weight: 600;
+  /* Negrito médio */
+}
+
+/* Célula que contém nome do funcionário e botão remover alinhados */
+.funcionario-cell {
+  display: flex;
+  /* Usa flexbox */
+  justify-content: space-between;
+  /* Espaço entre nome e botão */
+  align-items: center;
+  /* Alinha verticalmente */
+}
+
+/* Botão remover funcionário dentro da célula */
+.funcionario-cell button {
+  background-color: var(--cor-perigo);
+  /* Fundo vermelho */
+  border: none;
+  /* Sem borda */
+  border-radius: 50%;
+  /* Botão circular */
+  color: white;
+  /* Texto branco */
+  width: 22px;
+  /* Largura fixa */
+  height: 22px;
+  /* Altura fixa */
+  line-height: 20px;
+  /* Alinha texto */
+  text-align: center;
+  /* Centraliza texto */
+  cursor: pointer;
+  /* Cursor pointer */
+  font-weight: bold;
+  /* Negrito */
+  box-shadow: var(--sombra);
+  /* Sombra leve */
+  transition: background-color 0.3s, transform 0.2s;
+  /* Transições suaves */
+}
+
+/* Hover no botão de remover */
+.funcionario-cell button:hover {
+  background-color: var(--cor-perigo-hover);
+  /* Vermelho escuro */
+  transform: scale(1.1);
+  /* Aumenta botão */
+}
+
+/* Estilos para impressão */
+@media print {
+
+  /* Ajusta corpo para impressão */
+  body {
+    margin: 0;
+    /* Remove margem */
+    zoom: 70%;
+    /* Escala para impressão */
+    background: white;
+    /* Fundo branco */
+  }
+
+  /* Esconde controles e botões na impressão */
+  .controls,
+  .adicionar-funcionario,
+  button {
+    display: none !important;
+    /* Contêineres de controles e seção para adicionar funcionário */
+    text-align: center;
+    /* Centraliza conteúdo */
+    margin-bottom: 20px;
+    /* Espaço inferior */
+    
+    
+  }
+
+
+
+  /* Tabela com scroll desativado para impressão */
+  .tabela-container {
+    max-height: none;
+    /* Altura livre */
+    overflow: visible;
+    /* Sem scroll */
+    box-shadow: none;
+    /* Sem sombra */
+    border: none;
+    /* Sem borda */
+    
+  }
+
+  /* Aumenta fonte e reduz padding para leitura */
+  .tabela th,
+  .tabela td {
+    padding: 4px;
+    font-size: 18px;
+    
+    
+  }
+
+  /* Evita quebras de página no meio das células */
+  th,
+  td {
+    page-break-inside: avoid;
+  }
+
+  /* Configura página para paisagem e margens pequenas */
+  @page {
+    size: A4 landscape;
+    /* Formato A4 paisagem */
+    margin: 10mm;
+    /* Margem da página */
+  }
+}
+
+/* Estilo do botão de deletar (fora da célula) */
+.btn-deletar {
+  background-color: transparent;
+  /* Fundo transparente */
+  border: none;
+  /* Sem borda */
+  color: #e74c3c;
+  /* Vermelho */
+  cursor: pointer;
+  /* Cursor pointer */
+  padding: 4px;
+  /* Padding pequeno */
+  margin-left: 8px;
+  /* Margem à esquerda */
+  display: inline-flex;
+  /* Flexbox inline */
+  align-items: center;
+  /* Alinha verticalmente */
+  justify-content: center;
+  /* Centraliza conteúdo */
+  transition: transform 0.2s ease, color 0.2s ease;
+  /* Transições suaves */
+}
+
+/* SVG dentro do botão deletar */
+.btn-deletar svg {
+  width: 18px;
+  /* Largura do ícone */
+  height: 18px;
+  /* Altura do ícone */
+}
+
+/* Hover no botão deletar */
+.btn-deletar:hover {
+  color: #c0392b;
+  /* Vermelho mais escuro */
+  transform: scale(1.2);
+  /* Aumenta o ícone */
+}
+
+/* Ativo (clicado) no botão deletar */
+.btn-deletar:active {
+  transform: scale(0.9);
+  /* Diminui o ícone */
+}
+
+/* Mantém alinhados nome e botão no .funcionario-cell */
+.funcionario-cell {
+  display: flex;
+  /* Flexbox */
+  align-items: center;
+  /* Alinha verticalmente */
+  justify-content: space-between;
+  /* Espaço entre */
+}
+
+/* Container que vai abrigar as mensagens toast */
+#toast-container {
+  position: fixed;
+  /* Fixa o container na tela, independente do scroll */
+  top: 10px;
+  /* Distância de 10px do topo da janela */
+  left: 10px;
+  /* Distância de 10px da borda esquerda da janela */
+  z-index: 9999;
+  /* Garante que fique na frente de quase todos os outros elementos */
+  display: flex;
+  /* Usa flexbox para organizar as toasts */
+  flex-direction: column;
+  /* As toasts ficam empilhadas verticalmente */
+  gap: 8px;
+  /* Espaço de 8px entre cada toast */
+  max-width: 300px;
+  /* Largura máxima do container para não ficar muito largo */
+  font-family: Arial, sans-serif;
+  /* Fonte usada nas mensagens */
+}
+
+/* Estilo básico das mensagens toast */
+.toast {
+  padding: 12px 16px;
+  /* Espaçamento interno (espaço ao redor do texto) */
+  border-radius: 4px;
+  /* Bordas arredondadas para um visual mais suave */
+  color: white;
+  /* Cor do texto branca */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  /* Sombra leve para destacar as toasts */
+  opacity: 0.95;
+  /* Quase totalmente opaco */
+  animation: fadein 0.3s;
+  /* Animação para aparecer com efeito de fade */
+}
+
+/* Estilo para toast de sucesso (verde) */
+.toast.success {
+  background-color: #4CAF50;
+  /* Fundo verde */
+}
+
+/* Estilo para toast de erro (vermelho) */
+.toast.error {
+  background-color: #f44336;
+  /* Fundo vermelho */
+}
+
+/* Estilo para toast informativa (azul) */
+.toast.info {
+  background-color: #2196F3;
+  /* Fundo azul */
+}
+
+/* Animação fadein para a toast aparecer suavemente da esquerda para a posição normal */
+@keyframes fadein {
+  from {
+    opacity: 0;
+    /* Começa transparente */
+    transform: translateX(-20px);
+    /* Vem da esquerda, deslocada 20px */
+  }
+
+  to {
+    opacity: 0.95;
+    /* Fica quase totalmente visível */
+    transform: translateX(0);
+    /* Posição final normal */
+  }
+}
+
+/* Animação fadeout para a toast desaparecer suavemente */
+@keyframes fadeout {
+  from {
+    opacity: 0.95;
+    /* Começa quase totalmente visível */
+  }
+
+  to {
+    opacity: 0;
+    /* Fica totalmente transparente */
+  }
+}
+.btn-ferias {
+  margin-left: 8px;
+  padding: 2px 6px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.8em;
+}
+
+.btn-ferias:hover {
+  background-color: #45a049;
+}
+
+
